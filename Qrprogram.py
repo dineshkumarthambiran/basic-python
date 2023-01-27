@@ -1,10 +1,27 @@
 import qrcode
 
-data = "hello world"
+from pyzbar.pyzbar import decode
+from PIL import Image
 
-image=qrcode.make(data)
+# encoding
 
-image.save("Myfiles\Downloads\qr.png")
+# data = "hello world"
+
+# image=qrcode.make(data)
+
+# image.save("qr.png")
+
+# decoding
+
+img = Image.open("qr.png")
+
+result = decode(img)
+
+print(result)
+
+
+
+
 
 
 
